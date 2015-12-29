@@ -6,6 +6,7 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -23,6 +24,7 @@ import java.util.StringTokenizer;
 
 public class MainActivity extends AppCompatActivity {
 
+    private static final String TAG = MainActivity.class.getSimpleName();
     /**
      * ATTENTION: This was auto-generated to implement the App Indexing API.
      * See https://g.co/AppIndexing/AndroidStudio for more information.
@@ -61,33 +63,17 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                int temp=0;
+                int temp = 0;
                 String str = text.getText().toString();
                 final String res = str;
                 int length = str.length();
-                StringTokenizer tok1 = new StringTokenizer(str,"+");
-                Integer.toString(tok1));
-                  }
 
-          /**      for  (int i=0; i<=length; i++)
-              {
-                  char char1 = text.getText().toString().charAt(i);
-                    testone.setText(Integer.toString(text.getText().toString().indexOf("+")));
-
-                    if (Character.isDigit(char1))
-                    {
-                        rez+=char1;
+                for (Character c : str.toCharArray()) {
+                    if(c.equals('+')||c.equals('-')||c.equals('/')||c.equals('*')){
+                        Log.d(TAG, "Яху мы нашли не цифру: ");
                     }
-                    if (char1 == '+')
-                    {
-                        check.setChecked(true);
-                        break;
-                    }
-
-                    i++;
                 }
-                text.setText(Integer.toString(temp));
-            }*/
+            }
         });
 
 
